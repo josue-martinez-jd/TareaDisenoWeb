@@ -54,15 +54,15 @@ public class User
 
         if (rs.Read())
         {
-            Session["tipo"] = rs[6];
+            HttpContext.Current.Session["tipo"] = rs[6];
 
-            if (Int32.Parse(Session["tipo"].ToString()) == 0)
+            if (Int32.Parse(HttpContext.Current.Session["tipo"].ToString()) == 0)
             {
-                Response.Redirect("https://www.google.com");
+                HttpContext.Current.Response.Redirect("https://www.google.com");
             }
-            else if (Int32.Parse(Session["tipo"].ToString()) == 1)
+            else if (Int32.Parse(HttpContext.Current.Session["tipo"].ToString()) == 1)
             {
-                Response.Redirect("http://www.ulacit.ac.cr/");
+                HttpContext.Current.Response.Redirect("http://www.ulacit.ac.cr/");
             }
 
         }
