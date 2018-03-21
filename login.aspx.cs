@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class login : System.Web.UI.Page
 {
+    User user = new User();
     
 
     protected void Page_Load(object sender, EventArgs e)
@@ -15,4 +16,9 @@ public partial class login : System.Web.UI.Page
     }
 
 
+
+    protected void btnIngresar_Click(object sender, EventArgs e)
+    {
+        user.Login(txtUsernameLogin.Text, txtPasswordLogin.Text);
+    }
 }
