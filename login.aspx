@@ -6,7 +6,7 @@
 	<head runat="server">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>Login Page - Ace Admin</title>
+		<title>Login Page</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -36,6 +36,10 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+
+        <%-- Additional styles from font awesome --%>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 	</head>
 
 	<body class="login-layout">
@@ -47,9 +51,8 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="ace-icon fa fa-leaf green"></i>
-									<span class="red">Ace</span>
-									<span class="white" id="id-text2">Application</span>
+                                    <i class="fas fa-ticket-alt white"></i>
+									<span class="white" id="spanTitle">Stadium Tickets</span>
 								</h1>
 								<h4 class="blue" id="id-company-text">&copy; ULACIT</h4>
 							</div>
@@ -61,7 +64,6 @@
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger">
-												<i class="ace-icon fa fa-coffee green"></i>
 												Please Enter Your Information
 											</h4>
 
@@ -92,7 +94,7 @@
 															<input type="checkbox" class="ace" />
 															<span class="lbl"> Remember Me</span>
 														</label>
-                                                            <asp:Button ID="btnIngresar" type="button" class="width-35 pull-right btn btn-sm btn-primary" runat="server" Text="Ingresar" />
+                                                            <asp:Button ID="btnIngresar" type="button" class="width-35 pull-right btn btn-sm btn-primary" Text="Ingresar" OnClick="btnIngresar_Click" runat="server"  />
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Login</span>
 														</button>
@@ -100,41 +102,14 @@
 
 													<div class="space-4"></div>
 												</fieldset>
-											
 
-											<div class="social-or-login center">
-												<span class="bigger-110">Or Login Using</span>
-											</div>
-
-											<div class="space-6"></div>
-
-											<div class="social-login center">
-												<a class="btn btn-primary">
-													<i class="ace-icon fa fa-facebook"></i>
-												</a>
-
-												<a class="btn btn-info">
-													<i class="ace-icon fa fa-twitter"></i>
-												</a>
-
-												<a class="btn btn-danger">
-													<i class="ace-icon fa fa-google-plus"></i>
-												</a>
-											</div>
 										</div><!-- /.widget-main -->
 
 										<div class="toolbar clearfix">
-											<div>
-												<a href="#" data-target="#forgot-box" class="forgot-password-link">
-													<i class="ace-icon fa fa-arrow-left"></i>
-													I forgot my password
-												</a>
-											</div>
-
-											<div>
+											<div class="pull-right">
 												<a href="#" data-target="#signup-box" class="user-signup-link">
-													I want to register
-													<i class="ace-icon fa fa-arrow-right"></i>
+                                                    I want to register
+                                                    <i class="ace-icon fa fa-arrow-right"></i>
 												</a>
 											</div>
 										</div>

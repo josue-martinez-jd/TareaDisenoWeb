@@ -7,8 +7,8 @@ using System.Data.SqlClient;
 public class User
 {
 
-    SqlConnection conexion = new SqlConnection("data source = DESKTOP-AU2VG13; initial catalog = databaseTarea1;" +
-       "user id=valeriaba;password=ValeriaB.25");
+    SqlConnection conexion = new SqlConnection("data source = DESKTOP-V6P625O\\MSSQLSERVER01; initial catalog = db_demo;" +
+       "user id=josuemartinez;password=josue-18");
 
     public User()
     {
