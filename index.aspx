@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/index.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="main-content">
@@ -31,9 +32,12 @@
 					<div class="page-content">
                         <div class="container">
                             <div class="jumbotron">
-                                <asp:Button ID="btnClubLounge" Text="Here" runat="server"/>
+                                <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" runat="server"/>
+                                <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" runat="server"/>
                                 <img src="assets/images/gallery/stadium.png"
                                     width="1000" />
+                                <asp:Button class="btn btn-grey" ID="btnGraderiaEste" Text="Este" style="bottom: 5.4%;" runat="server"/>
+                                <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte"  runat="server"/>
                             </div>
                         </div>
 						<div class="row">
