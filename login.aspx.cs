@@ -21,4 +21,13 @@ public partial class login : System.Web.UI.Page
     {
         user.Login(txtUsernameLogin.Text, txtPasswordLogin.Text);
     }
+
+
+    protected void btnRegister_Click(object sender, EventArgs e)
+    {
+        user.Register(txtCedulaRegistro.Text, txtNombreRegistro.Text, txtPrimerApRegistro.Text, txtSegundoApRegistro.Text, txtDireccionRegistro.Text, txtEmailRegistro.Text, txtTelefonoRegistro.Text, txtUsernameRegistro.Text, txtPasswordRegistro.Text);
+    }
+
+
+
 }

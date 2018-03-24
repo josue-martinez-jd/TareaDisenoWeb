@@ -40,6 +40,12 @@
         <%-- Additional styles from font awesome --%>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+	    <style type="text/css">
+            .auto-style1 {
+                left: 0px;
+                top: 0px;
+            }
+        </style>
 	</head>
 
 	<body class="login-layout">
@@ -97,7 +103,6 @@
                                                             <asp:Button ID="btnIngresar" type="button" class="width-35 pull-right btn btn-sm btn-primary" Text="Ingresar" OnClick="btnIngresar_Click" runat="server"  />
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Login</span>
-														</button>
 													</div>
 
 													<div class="space-4"></div>
@@ -116,7 +121,7 @@
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->
 
-								<div id="forgot-box" class="forgot-box widget-box no-border">
+								<%--<div id="forgot-box" class="forgot-box widget-box no-border">
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header red lighter bigger">
@@ -157,7 +162,7 @@
 											</a>
 										</div>
 									</div><!-- /.widget-body -->
-								</div><!-- /.forgot-box -->
+								</div><!-- /.forgot-box -->--%>
 
 								<div id="signup-box" class="signup-box widget-box no-border">
 									<div class="widget-body">
@@ -175,45 +180,45 @@
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
                                                             <asp:TextBox ID="txtCedulaRegistro" type="text" class="form-control" placeholder="Cedula" runat="server"></asp:TextBox>
-															<i class="ace-icon fa fa-user"></i>
+                                                            <i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
                                                             <asp:TextBox ID="txtNombreRegistro" type="text" class="form-control" placeholder="Nombre" runat="server"></asp:TextBox>
+                                                            <i class="ace-icon fa fa-user"></i>
 
-															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-                                                            <asp:TextBox ID="txtPrimerApRegistro" type="email" class="form-control" placeholder="Primer apellido" runat="server"></asp:TextBox>
-
-															<i class="ace-icon fa fa-user"></i>
+                                                            <asp:TextBox ID="txtPrimerApRegistro" type="text" class="form-control" placeholder="Primer apellido" runat="server"></asp:TextBox>
+                                                            <i class="ace-icon fa fa-user"></i>
+		
 														</span>
 													</label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
                                                             <asp:TextBox ID="txtSegundoApRegistro" type="text" class="form-control" placeholder="Segundo apellido" runat="server"></asp:TextBox>
+                                                            <i class="ace-icon fa fa-user"></i>
 
-															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
                                                             <asp:TextBox ID="txtDireccionRegistro" type="text" class="form-control" placeholder="Direccion" runat="server"></asp:TextBox>
+                                                            <i class="ace-icon fa fa-user"></i>
 
-															<i class="ace-icon fa fa-user"></i>
 														</span>
 													</label>
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-                                                            <asp:TextBox ID="txtEmailRegistro" type="email" class="form-control" placeholder="Email" runat="server"></asp:TextBox>
+                                                            <asp:TextBox ID="txtEmailRegistro" type="email" class="form-control" placeholder="Email" runat="server" ></asp:TextBox>
 
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
@@ -221,7 +226,7 @@
 
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-                                                            <asp:TextBox ID="txtTelefonoRegistro" type="email" class="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
+                                                            <asp:TextBox ID="txtTelefonoRegistro" type="text" class="form-control" placeholder="Telefono" runat="server"></asp:TextBox>
 
 															<i class="ace-icon fa fa-user"></i>
 														</span>
@@ -259,11 +264,8 @@
 															<span class="bigger-110">Reset</span>
 														</button>
 
-														<button type="button" class="width-65 pull-right btn btn-sm btn-success">
-															<span class="bigger-110">Register</span>
-
-															<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-														</button>
+                                                         <asp:Button ID="btnRegister" type="button" class="width-65 pull-right btn btn-sm btn-success" Text="Register" CssClass="auto-style1"  OnClick="btnRegister_Click" runat="server"  />
+	
 													</div>
 												</fieldset>
 											

@@ -7,8 +7,15 @@ using System.Data.SqlClient;
 public class User
 {
 
-    SqlConnection conexion = new SqlConnection("data source = DESKTOP-V6P625O\\MSSQLSERVER01; initial catalog = db_demo;" +
-       "user id=josuemartinez;password=josue-18");
+    SqlConnection conexion = new SqlConnection("data source = DESKTOP-AU2VG13; initial catalog = db_demo;"
+        + "user id=valeriaba;password=ValeriaB.25");
+
+    //Josue: "data source = DESKTOP-V6P625O\\MSSQLSERVER01; initial catalog = db_demo;" + "user id=josuemartinez;password=josue-18"
+    //Vale: "data source = DESKTOP-AU2VG13; initial catalog = db_demo;" + "user id=valeriaba;password=ValeriaB.25"
+
+    String sql;
+    SqlCommand com;
+    SqlDataReader rs;
 
     public User()
     {
@@ -18,28 +25,22 @@ public class User
     }
 
 
-    public void Register(string cedula, string nombre, string primerAp, string SegundoAp, string direccion, string email, string telefono, string username, string password)
+    public void Register(string cedula, string nombre, string primerAp, string SegundoAp, string direccion, string email, string telefono, string usuario, string password)
     {
-
-        String sql;
-        SqlCommand com;
 
         conexion.Open(); //Iniciar conexion
 
-        sql = "INSERT INTO t_usuario VALUES('" + cedula + "','"+ nombre + "','" + primerAp + "','" + SegundoAp + "','" 
-            + direccion + "','" + email + "','" + telefono + "', PWDENCRYPT('" + password + "')" + "')";
+        sql = "INSERT INTO t_usuario VALUES('" + cedula + "','" + nombre + "','" + primerAp + "','" + SegundoAp + "','" + direccion + "','" + email + "','" + telefono + "','" + usuario + "',PWDENCRYPT('" + password + "')," + 0 + ")";
 
         com = conexion.CreateCommand();
         com.CommandText = sql;
         com.ExecuteNonQuery();
+
         conexion.Close(); //terminar conexion
     }
 
     public void Login(string usuario, string password)
     {
-        String sql;
-        SqlCommand com;
-        SqlDataReader rs;
 
         conexion.Open(); //Iniciar conexion
 
@@ -54,11 +55,11 @@ public class User
 
         if (rs.Read())
         {
-            HttpContext.Current.Session["tipo"] = rs[6];
+            HttpContext.Current.Session["tipo"] = rs[9];
 
             if (Int32.Parse(HttpContext.Current.Session["tipo"].ToString()) == 0)
             {
-                HttpContext.Current.Response.Redirect("https://www.google.com");
+                HttpContext.Current.Response.Redirect("EscogerEvento.aspx");
             }
             else if (Int32.Parse(HttpContext.Current.Session["tipo"].ToString()) == 1)
             {
