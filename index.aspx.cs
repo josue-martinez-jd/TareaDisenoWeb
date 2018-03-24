@@ -11,4 +11,11 @@ public partial class index : System.Web.UI.Page
     {
 
     }
+
+    protected void btnClubLounge_Click(object sender, EventArgs e)
+    {
+
+    }
+
+ 
 }
