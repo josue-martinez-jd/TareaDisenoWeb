@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/index.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="main-content">
@@ -30,7 +30,23 @@
 					</div>
 
 					<div class="page-content">
-                        <div class="container">
+                        <div class="container prices">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label>Precio Oeste: <asp:Label ID="lblPrecioOeste" runat="server">$1214</asp:Label></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Precio Este: <asp:Label ID="lblPrecioEste" runat="server">$1214</asp:Label></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Precio Norte: <asp:Label ID="lblPrecioNorte" runat="server">$1214</asp:Label></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Precio Sur: <asp:Label ID="lblPrecioSur" runat="server">$1214</asp:Label></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container stadium">
                             <div class="jumbotron">
                                 <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" runat="server"/>
                                 <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" runat="server"/>

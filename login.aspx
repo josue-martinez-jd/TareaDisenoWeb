@@ -259,12 +259,12 @@
 													<div class="space-24"></div>
 
 													<div class="clearfix">
-														<button type="reset" class="width-30 pull-left btn btn-sm">
+														<%--<button type="reset" class="width-30 pull-left btn btn-sm">
 															<i class="ace-icon fa fa-refresh"></i>
 															<span class="bigger-110">Reset</span>
-														</button>
-
-                                                         <asp:Button ID="btnRegister" type="button" class="width-65 pull-right btn btn-sm btn-success" Text="Register" CssClass="auto-style1"  OnClick="btnRegister_Click" runat="server"  />
+														</button>--%>
+                                                        &nbsp
+                                                        <asp:Button ID="btnRegister" type="button" class="width-30 pull-left btn btn-sm" Text="Register" OnClick="btnRegister_Click" runat="server"  />
 	
 													</div>
 												</fieldset>
