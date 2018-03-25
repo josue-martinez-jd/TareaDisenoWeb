@@ -9,9 +9,10 @@
             <div class="row">
                 <div class="col-md-5">
                     <h4> TRANSLADO :</h4>
-                     <asp:DropDownList placeholder="Escoge un Translado" class="chosen-container chosen-container-single" runat="server">
+                     <asp:DropDownList ID="btnTranslado" placeholder="Escoge un Translado" class="chosen-container chosen-container-single" runat="server" DataSourceID="SqlDataSource1" DataTextField="nombre" DataValueField="nombre">
                         <asp:ListItem Value="">Select</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_demoConnectionString %>" SelectCommand="SELECT [nombre] FROM [t_translado]"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
                                     <asp:Label ID="lblCostoNorte1" runat="server"> Partido</asp:Label>
 								</div>
                                <hr />
-                               <asp:Button ID="btnEscogerEvento1" Text="Escoger" class="btn btn-inverse" runat="server"/>
+                               <asp:Button ID="btnEscogerEvento1" Text="Escoger" class="btn btn-inverse" Onclick="btnEscogerEvento1_Click" runat="server"/>
                         </div>
                      </div>
                      </div>
@@ -87,7 +88,7 @@
                                     <asp:Label ID="lblCostoNorte2" runat="server"> Partido</asp:Label>
 								</div>
                                <hr />
-                               <asp:Button ID="btnEscogerEvento2" Text="Escoger" class="btn btn-inverse" runat="server"/>
+                               <asp:Button ID="btnEscogerEvento2" Text="Escoger" class="btn btn-inverse" OnClick="btnEscogerEvento2_Click" runat="server"/>
                         </div>
                      </div>
                      </div>
@@ -124,12 +125,25 @@
                                     <asp:Label ID="lblCostoNorte3" runat="server"> Partido</asp:Label>
 								</div>
                                <hr />
-                               <asp:Button ID="btnEscogerEvento3" Text="Escoger" class="btn btn-inverse" runat="server"/>
+                               <asp:Button ID="btnEscogerEvento3" Text="Escoger" class="btn btn-inverse" OnClick="btnEscogerEvento3_Click" runat="server"/>
                         </div>
                      </div>
                      </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container next">
+            <div class="row">
+                <div class="col-md-5">
+                    <asp:Button class="btn btn-dark" ID="btnSiguiente"  Text="Siguiente" Onclick="btnSiguiente_Click" runat="server"/>
+                </div>
+            </div>
+<%--        <div class="row">
+                <div class="col-md-5">
+                    <asp:Label  ID="lblTest" style="color:red;" runat="server">Text</asp:Label>
+                </div>
+            </div>--%>
         </div>
     </div>
     

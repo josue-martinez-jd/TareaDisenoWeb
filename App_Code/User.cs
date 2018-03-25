@@ -56,6 +56,7 @@ public class User
         if (rs.Read())
         {
             HttpContext.Current.Session["tipo"] = rs[9];
+            HttpContext.Current.Session["cedula"] = rs[0];
 
             if (Int32.Parse(HttpContext.Current.Session["tipo"].ToString()) == 0)
             {
