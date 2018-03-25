@@ -12,7 +12,7 @@ public partial class EscogerEvento : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        setLabel.setLabels();
+        setLabel.setLabelsEvento();
         lblDescripcion1.Text= SetLabel.Descripcion1;
         lblArtista1.Text = SetLabel.Artista1;
         lblCostoEste1.Text = SetLabel.CostoEste1;
