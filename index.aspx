@@ -28,52 +28,36 @@
 							</form>
 						</div><!-- /.nav-search -->
 					</div>
-
-					<div class="page-content">
-                        <div class="container prices">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <label>Precio Oeste: <asp:Label ID="lblPrecioOeste" runat="server">$1214</asp:Label></label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <label>Precio Este: <asp:Label ID="lblPrecioEste" runat="server">$1214</asp:Label></label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <label>Precio Norte: <asp:Label ID="lblPrecioNorte" runat="server">$1214</asp:Label></label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <label>Precio Sur: <asp:Label ID="lblPrecioSur" runat="server">$1214</asp:Label></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container stadium">
-                            <div class="jumbotron">
-                                <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" OnClick="btnGraderiaOeste_Click" runat="server"/>
-                                <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" OnClick="btnGraderiaSur_Click" runat="server"/>
-                                <img src="assets/images/gallery/stadium.png"
-                                    width="1000" />
-                                <asp:Button class="btn btn-grey" ID="btnGraderiaEste" Text="Este" style="bottom: 5.4%;" OnClick="btnGraderiaEste_Click" runat="server"/>
-                                <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte" Onclick="btnGraderiaNorte_Click" runat="server"/>
-                            </div>
-                        </div>
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-                                
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					</div><!-- /.page-content -->
-
-<%--             <div class="row">
-                <div class="col-md-5">
-                    <asp:Label  ID="lblTest" style="color:red;" runat="server">Text</asp:Label>
+		<div class="page-content">
+            <div class="container prices">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label>Precio Oeste: <asp:Label ID="lblPrecioOeste" runat="server">$1214</asp:Label></label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Precio Este: <asp:Label ID="lblPrecioEste" runat="server">$1214</asp:Label></label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Precio Norte: <asp:Label ID="lblPrecioNorte" runat="server">$1214</asp:Label></label>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Precio Sur: <asp:Label ID="lblPrecioSur" runat="server">$1214</asp:Label></label>
+                    </div>
                 </div>
-            </div>--%>
-
-
-				</div>
-			</div><!-- /.main-content -->
+            </div>
+            <div class="container stadium">
+                <div class="jumbotron">
+                    <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" runat="server"/>
+                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" runat="server"/>
+                    <img src="assets/images/gallery/stadium.png"
+                        width="1000" />
+                    <asp:Button class="btn btn-grey" ID="btnGraderiaEste" Text="Este" style="bottom: 5.4%;" runat="server"/>
+                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte"  runat="server"/>
+                </div>
+            </div>
+		</div><!-- /.page-content -->
+	</div>
+	<!-- /.main-content -->   
 
     <!-- basic scripts -->
 
@@ -82,9 +66,7 @@
 
 		<!-- <![endif]-->
 
-		<!--[if IE]>
-<script src="../assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
+		
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
