@@ -2,17 +2,17 @@
 }
 
 
-.container {
+.stadium {
     position: relative;
     width: 100%;
 }
 
-.container img {
+.stadium img {
     width: 100%;
     height: auto;
 }
 
-.container .btn {
+.stadium .btn {
     position: absolute;
     width: 19%;
     transform: translate(-50%, -50%);
@@ -24,13 +24,35 @@
     left: 50.5%;
 }
 
-.container .rotated {
+.stadium .rotated {
     transform: rotate(90deg);
     top: 47.5%;
 }
 
-.container .btn:hover {
+.stadium .btn:hover {
     background-color: black;
+}
+
+.prices label {
+    font-weight: bold;
+}
+
+.delivery .row {
+    margin-left: 39.7%;
+    position: static;
+}
+
+.events .widget-box {
+    margin: 8%;
+}
+
+.widget-main label{
+    font-weight:bold; 
+    font-size: 2rem; 
+}
+
+.widget-main span {
+    font-size: 1.8rem; 
 }
 
 
