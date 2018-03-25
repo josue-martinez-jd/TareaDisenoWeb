@@ -47,12 +47,12 @@
             </div>
             <div class="container stadium">
                 <div class="jumbotron">
-                    <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" runat="server"/>
-                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" runat="server"/>
+                    <asp:Button class="btn btn-grey" ID="btnGraderiaOeste" Text="Oeste" style="top: 11.1%;" OnClick="btnGraderiaOeste_Click" runat="server"/>
+                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaSur" Text="Sur" style="left: 0%;" OnClick="btnGraderiaSur_Click" runat="server"/>
                     <img src="assets/images/gallery/stadium.png"
                         width="1000" />
-                    <asp:Button class="btn btn-grey" ID="btnGraderiaEste" Text="Este" style="bottom: 5.4%;" runat="server"/>
-                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte"  runat="server"/>
+                    <asp:Button class="btn btn-grey" ID="btnGraderiaEste" Text="Este" style="bottom: 5.4%;" OnClick="btnGraderiaEste_Click" runat="server"/>
+                    <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte" OnClick="btnGraderiaNorte_Click" runat="server"/>
                 </div>
             </div>
 		</div><!-- /.page-content -->

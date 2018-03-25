@@ -67,4 +67,18 @@ public class Compra
         conexion.Close(); //terminar conexion
     }
 
+
+    public void actualizarCantAsientos(int cantidad, int id_cobro)
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "UPDATE t_cobro SET cantidadAsientos = " + cantidad + " WHERE id_cobro = " + id_cobro + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+    }
+
+    
 }

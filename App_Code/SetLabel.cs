@@ -21,6 +21,7 @@ public class SetLabel
 
     public SetLabel() { }
 
+    // EscogerEvento
     public static string Descripcion1;
     public static string Artista1;
     public static string CostoEste1;
@@ -42,7 +43,23 @@ public class SetLabel
     public static string CostoNorte3;
     public static string CostoSur3;
 
-    public void setLabels()
+    //index
+    public static string PrecioEste;
+    public static string PrecioOeste;
+    public static string PrecioNorte;
+    public static string PrecioSur;
+
+    //Cobro
+    public static string DescripcionCobro;
+    public static string HorarioCobro;
+    public static string TransladoCobro;
+    public static string PrecioTransladoCobro;
+    public static string GraderiaCobro;
+    public static string PrecioUnidadCobro;
+    public static string CantAsientosCobro;
+    public static string TotalCobro;
+
+    public void setLabelsEvento()
     {
         conexion.Open(); //Iniciar conexion
 
@@ -56,10 +73,10 @@ public class SetLabel
         {
             Descripcion1 = rs[1].ToString();
             Artista1 = rs[2].ToString();
-            CostoEste1 = rs[3].ToString();
-            CostoOeste1 = rs[4].ToString();
-            CostoNorte1 = rs[5].ToString();
-            CostoSur1 = rs[6].ToString();
+            CostoEste1 = "₡" + rs[3].ToString();
+            CostoOeste1 = "₡" + rs[4].ToString();
+            CostoNorte1 = "₡" + rs[5].ToString();
+            CostoSur1 = "₡" + rs[6].ToString();
           }
         conexion.Close(); //terminar conexion
         conexion.Open(); //Iniciar conexion
@@ -73,10 +90,10 @@ public class SetLabel
         {
             Descripcion2 = rs[1].ToString();
             Artista2 = rs[2].ToString();
-            CostoEste2 = rs[3].ToString();
-            CostoOeste2 = rs[4].ToString();
-            CostoNorte2 = rs[5].ToString();
-            CostoSur2 = rs[6].ToString();
+            CostoEste2 = "₡" + rs[3].ToString();
+            CostoOeste2 = "₡" + rs[4].ToString();
+            CostoNorte2 = "₡" + rs[5].ToString();
+            CostoSur2 = "₡" + rs[6].ToString();
         }
         conexion.Close(); //terminar conexion
         conexion.Open(); //Iniciar conexion
@@ -90,13 +107,46 @@ public class SetLabel
         {
             Descripcion3 = rs[1].ToString();
             Artista3 = rs[2].ToString();
-            CostoEste3 = rs[3].ToString();
-            CostoOeste3 = rs[4].ToString();
-            CostoNorte3 = rs[5].ToString();
-            CostoSur3 = rs[6].ToString();
+            CostoEste3 = "₡" + rs[3].ToString();
+            CostoOeste3 = "₡" + rs[4].ToString();
+            CostoNorte3 = "₡" + rs[5].ToString();
+            CostoSur3 = "₡" + rs[6].ToString();
         }
 
         conexion.Close(); //terminar conexion
     }
+
+    public void setLabelsGraderia(int id_graderia)
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "select * from t_graderia where id_graderia=" + id_graderia + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        rs = com.ExecuteReader(); //solamente para SELECT
+
+        if (rs.Read())
+        {
+            if (id_graderia == 1)
+            {
+                PrecioNorte = "₡" + rs[2].ToString();
+            }
+            else if (id_graderia == 2)
+            {
+                PrecioSur = "₡" + rs[2].ToString();
+            }
+            else if (id_graderia == 3)
+            {
+                PrecioEste = "₡" + rs[2].ToString();
+            }
+            else if (id_graderia == 4)
+            {
+                PrecioOeste = "₡" + rs[2].ToString();
+            }
+        }
+        conexion.Close(); //terminar conexion
+    }
+
 
 }

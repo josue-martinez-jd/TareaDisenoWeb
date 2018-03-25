@@ -72,7 +72,7 @@
                         </h4>
                     </div>
                     <div class="col-xs-12">
-                        <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" runat="server"/>
+                        <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" OnClick="btnSiguiente_Click" runat="server"/>
                         <a class="fa fa-arrow-right green"></a>
                     </div>
                 </div>
