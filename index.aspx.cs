@@ -13,13 +13,6 @@ public partial class index : System.Web.UI.Page
     {
     }
 
-    protected void btnClubLounge_Click(object sender, EventArgs e)
-    {
-        
-
-
-    }
-
     protected void btnGraderiaEste_Click(object sender, EventArgs e)
     {
         compra.actualizarGraderia(3, Int32.Parse(Session["id_compra"].ToString()));
