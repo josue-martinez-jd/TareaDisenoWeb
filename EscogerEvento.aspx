@@ -35,6 +35,10 @@
                                     <asp:Label ID="lblArtista1" runat="server"> Partido</asp:Label>
 								</div>
                                 <div>
+									<label> Horario: </label>
+                                    <asp:Label ID="lblHorario1" runat="server"> Partido</asp:Label>
+								</div>
+                                <div>
 									<label> Costo Oeste: </label>
                                     <asp:Label ID="lblCostoOeste1" runat="server"> Partido</asp:Label>
 								</div>
@@ -70,6 +74,10 @@
                                 <div>
 									<label> Artista: </label>
                                     <asp:Label ID="lblArtista2" runat="server"> Partido</asp:Label>
+								</div>
+                                <div>
+									<label> Horario: </label>
+                                    <asp:Label ID="lblHorario2" runat="server"> Partido</asp:Label>
 								</div>
                                 <div>
 									<label> Costo Oeste: </label>
@@ -109,6 +117,10 @@
                                     <asp:Label ID="lblArtista3" runat="server"> Partido</asp:Label>
 								</div>
                                 <div>
+                                <div>
+									<label> Horario: </label>
+                                    <asp:Label ID="lblHorario3" runat="server"> Partido</asp:Label>
+								</div>
 									<label> Costo Oeste: </label>
                                     <asp:Label ID="lblCostoOeste3" runat="server"> Partido</asp:Label>
 								</div>
@@ -135,11 +147,12 @@
 
         <div class="container next">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-lg-12">
+                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" runat="server"/>
                     <asp:Button class="btn btn-dark" ID="btnSiguiente"  Text="Siguiente" Onclick="btnSiguiente_Click" runat="server"/>
                 </div>
             </div>
-<%--        <div class="row">
+    <%--        <div class="row">
                 <div class="col-md-5">
                     <asp:Label  ID="lblTest" style="color:red;" runat="server">Text</asp:Label>
                 </div>
