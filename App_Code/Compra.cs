@@ -80,5 +80,16 @@ public class Compra
         conexion.Close(); //terminar conexion
     }
 
-    
+    public void deleteCompraActual()
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "DELETE FROM t_cobro WHERE id_cobro = " + Int32.Parse(HttpContext.Current.Session["id_compra"].ToString()) + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+    }
+
 }

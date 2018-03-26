@@ -12,9 +12,17 @@ public partial class login : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-    }
+        if (!Page.IsPostBack)
+        {
+            Session["tipo"] = null;
+            Session["cedula"] = null;
+            Session["id_compra"] = null;
+            Session["id_graderia"] = null;
+            Session["id_translado"] = null;
+            Session["id_evento"] = null;
+        }
 
+    }
 
 
     protected void btnIngresar_Click(object sender, EventArgs e)

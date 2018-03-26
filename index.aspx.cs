@@ -50,4 +50,10 @@ public partial class index : System.Web.UI.Page
         compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
         HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
     }
+
+    protected void btnCancelar_Click(object sender, EventArgs e)
+    {
+        compra.deleteCompraActual();
+        HttpContext.Current.Response.Redirect("Index.aspx");
+    }
 }

@@ -148,5 +148,37 @@ public class SetLabel
         conexion.Close(); //terminar conexion
     }
 
+    public void setlabelsCobro()
+    {
+        conexion.Open(); //Iniciar conexion
 
+        sql = "select e.descripcion, e.horario, t.nombre as Translado, '₡' + CONVERT(varchar, CAST(t.precio AS money), 1) as PrecioTranslado, g.nombre as Graderia,'₡' + CONVERT(varchar, CAST(g.precio AS money), 1) as PrecioUnidad ,c.cantidadAsientos , '₡' + CONVERT(varchar, CAST(t.precio + (c.cantidadAsientos * g.precio) AS money), 1) as Total"
+            + " from t_cobro c"
+            + " JOIN t_evento e"
+            + " ON(c.id_evento = e.id_evento)"
+            + " JOIN t_translado t"
+            + " ON(c.id_translado = t.id_translado)"
+            + " JOIN t_graderia g"
+            + " ON(c.id_graderia = g.id_graderia)"
+            + " where c.id_cobro="+ Int32.Parse(HttpContext.Current.Session["id_compra"].ToString());
+
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        rs = com.ExecuteReader(); //solamente para SELECT
+
+        if (rs.Read())
+        {
+            DescripcionCobro = rs[0].ToString();
+            HorarioCobro = rs[1].ToString();
+            TransladoCobro = rs[2].ToString();
+            PrecioTransladoCobro = rs[3].ToString();
+            GraderiaCobro = rs[4].ToString();
+            PrecioUnidadCobro = rs[5].ToString();
+            CantAsientosCobro = rs[6].ToString();
+            TotalCobro = rs[7].ToString();
+        }
+        conexion.Close(); //terminar conexion
+
+    }
 }

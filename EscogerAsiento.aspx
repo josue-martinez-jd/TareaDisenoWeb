@@ -73,8 +73,8 @@
                             </h4>
                         </div>
                         <div class="col-xs-12">
-                            <asp:Button class="btn btn-danger" ID="Button1"  Text="Cancelar" runat="server"/>
-                            <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" runat="server"/>         
+                            <asp:Button class="btn btn-danger" ID="btnCancelarAsiento"  Text="Cancelar" Onclick="btnCancelarAsiento_Click" runat="server"/>
+                            <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" Onclick="btnSiguiente_Click" runat="server"/>         
                         </div>
                     </div>
                 </div>

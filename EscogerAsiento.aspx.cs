@@ -142,4 +142,13 @@ public partial class EscogerAsiento : System.Web.UI.Page
         }
     }
 
+
+
+    protected void btnCancelarAsiento_Click(object sender, EventArgs e)
+    {
+        asiento.setAsientosNull();
+        compra.deleteCompraActual();
+        HttpContext.Current.Response.Redirect("Login.aspx");
+    }
+
 }

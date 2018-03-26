@@ -50,8 +50,8 @@
                                <hr />
                             <div class="row">
                                 <div class="col-lg-12 center" style="margin-bottom: 5%";>
-                                    <asp:Button ID="btnAceptar" Text="Aceptar" class="btn btn-success" runat="server"/>
-                                    <asp:Button ID="btnCancelar" Text="Cancelar" class="btn btn-danger" runat="server"/>
+                                    <asp:Button ID="btnAceptar" Text="Aceptar" class="btn btn-success" OnClick="btnAceptar_Click" runat="server"/>
+                                    <asp:Button ID="btnCancelar" Text="Cancelar" class="btn btn-danger" OnClick="btnCancelar_Click" runat="server"/>
                                 </div>
                             </div>
                         </div>
