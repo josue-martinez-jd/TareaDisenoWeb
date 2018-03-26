@@ -55,6 +55,12 @@
                     <asp:Button class="btn btn-purple rotated" ID="btnGraderiaNorte" Style="left: 82%;" Text="Norte" OnClick="btnGraderiaNorte_Click" runat="server"/>
                 </div>
             </div>
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" runat="server"/>
+                </div>
+            </div>
 		</div><!-- /.page-content -->
 	</div>
 	<!-- /.main-content -->   

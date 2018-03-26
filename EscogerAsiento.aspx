@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/index.master" AutoEventWireup="true" CodeFile="EscogerAsiento.aspx.cs" Inherits="EscogerAsiento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-   
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -65,15 +65,17 @@
 						</table>
 				    </div><!-- /.span -->
 				</div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4> Cantidad Asientos Escogidos: 
-                            <asp:Label ID="lblCantidadAsientos" runat="server">45</asp:Label>
-                        </h4>
-                    </div>
-                    <div class="col-xs-12">
-                        <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" OnClick="btnSiguiente_Click" runat="server"/>
-                        <a class="fa fa-arrow-right green"></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4> Cantidad Asientos Escogidos: 
+                                <asp:Label ID="lblCantidadAsientos" runat="server">45</asp:Label>
+                            </h4>
+                        </div>
+                        <div class="col-xs-12">
+                            <asp:Button class="btn btn-danger" ID="Button1"  Text="Cancelar" runat="server"/>
+                            <asp:Button ID="btnSiguiente" class="btn btn-grey" Text="Siguiente" runat="server"/>         
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,6 +98,7 @@
 		<script src="../assets/js/bootstrap.min.js"></script>
 
 		<!-- page specific plugin scripts -->
+       <script src="assets/js/bootbox.js"></script>
 
 		<!-- ace scripts -->
 		<script src="../assets/js/ace-elements.min.js"></script>
