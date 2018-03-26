@@ -148,7 +148,7 @@
         <div class="container next">
             <div class="row">
                 <div class="col-lg-12">
-                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" runat="server"/>
+                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" Onclick="btnCancelar_Click" runat="server"/>
                     <asp:Button class="btn btn-dark" ID="btnSiguiente"  Text="Siguiente" Onclick="btnSiguiente_Click" runat="server"/>
                 </div>
             </div>

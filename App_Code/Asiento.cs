@@ -158,4 +158,16 @@ public class Asiento
         conexion.Close(); //terminar conexion
     }
 
+    public void setAsientosNull()
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "Update t_asiento set id_cobro = null where id_cobro = " + Int32.Parse(HttpContext.Current.Session["id_compra"].ToString()) + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+    }
+
 }

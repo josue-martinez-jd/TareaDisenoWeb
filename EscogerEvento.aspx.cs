@@ -59,4 +59,9 @@ public partial class EscogerEvento : System.Web.UI.Page
     {
         Session["id_evento"] = 3;
     }
+
+    protected void btnCancelar_Click(object sender, EventArgs e)
+    {
+        HttpContext.Current.Response.Redirect("Login.aspx");
+    }
 }

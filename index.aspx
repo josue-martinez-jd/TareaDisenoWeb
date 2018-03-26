@@ -58,7 +58,7 @@
             <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" runat="server"/>
+                    <asp:Button class="btn btn-danger" ID="btnCancelar"  Text="Cancelar" Onclick="btnCancelar_Click" runat="server"/>
                 </div>
             </div>
 		</div><!-- /.page-content -->
