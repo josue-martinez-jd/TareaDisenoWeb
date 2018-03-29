@@ -20,6 +20,7 @@ public partial class index : System.Web.UI.Page
         lblPrecioNorte.Text = SetLabel.PrecioNorte;
         lblPrecioOeste.Text = SetLabel.PrecioOeste;
         lblPrecioSur.Text = SetLabel.PrecioSur;
+        
 
     }
 

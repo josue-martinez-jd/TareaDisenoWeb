@@ -28,6 +28,7 @@ public class SetLabel
     public static string CostoOeste1;
     public static string CostoNorte1;
     public static string CostoSur1;
+    public static string Horario1;
 
     public static string Descripcion2;
     public static string Artista2;
@@ -35,6 +36,7 @@ public class SetLabel
     public static string CostoOeste2;
     public static string CostoNorte2;
     public static string CostoSur2;
+    public static string Horario2;
 
     public static string Descripcion3;
     public static string Artista3;
@@ -42,6 +44,7 @@ public class SetLabel
     public static string CostoOeste3;
     public static string CostoNorte3;
     public static string CostoSur3;
+    public static string Horario3;
 
     //index
     public static string PrecioEste;
@@ -77,7 +80,8 @@ public class SetLabel
             CostoOeste1 = "₡" + rs[4].ToString();
             CostoNorte1 = "₡" + rs[5].ToString();
             CostoSur1 = "₡" + rs[6].ToString();
-          }
+            Horario1 = rs[7].ToString();
+        }
         conexion.Close(); //terminar conexion
         conexion.Open(); //Iniciar conexion
         sql = "select * from t_evento where id_evento=2";
@@ -94,6 +98,7 @@ public class SetLabel
             CostoOeste2 = "₡" + rs[4].ToString();
             CostoNorte2 = "₡" + rs[5].ToString();
             CostoSur2 = "₡" + rs[6].ToString();
+            Horario2 = rs[7].ToString();
         }
         conexion.Close(); //terminar conexion
         conexion.Open(); //Iniciar conexion
@@ -111,6 +116,7 @@ public class SetLabel
             CostoOeste3 = "₡" + rs[4].ToString();
             CostoNorte3 = "₡" + rs[5].ToString();
             CostoSur3 = "₡" + rs[6].ToString();
+            Horario3 = rs[7].ToString();
         }
 
         conexion.Close(); //terminar conexion

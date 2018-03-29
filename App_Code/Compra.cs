@@ -92,4 +92,17 @@ public class Compra
         conexion.Close(); //terminar conexion
     }
 
+    public void actualizarProcesado()
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "Update t_cobro set procesado = 1 where id_cobro= " + HttpContext.Current.Session["id_compra"] + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+
+    }
+
 }
