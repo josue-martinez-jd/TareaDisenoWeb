@@ -26,35 +26,75 @@ public partial class index : System.Web.UI.Page
 
     protected void btnGraderiaEste_Click(object sender, EventArgs e)
     {
-        Session["id_graderia"] = 3;
-        compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
-        HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        try
+        {
+            Session["id_graderia"] = 3;
+            compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
+            HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
     protected void btnGraderiaNorte_Click(object sender, EventArgs e)
     {
-        Session["id_graderia"] = 1;
-        compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
-        HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        try
+        {
+            Session["id_graderia"] = 1;
+            compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
+            HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
     protected void btnGraderiaOeste_Click(object sender, EventArgs e)
     {
-        Session["id_graderia"] = 4;
-        compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
-        HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        try
+        {
+            Session["id_graderia"] = 4;
+            compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
+            HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
     protected void btnGraderiaSur_Click(object sender, EventArgs e)
     {
-        Session["id_graderia"] = 2;
-        compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
-        HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        try
+        {
+            Session["id_graderia"] = 2;
+            compra.actualizarGraderia(Int32.Parse(Session["id_graderia"].ToString()), Int32.Parse(Session["id_compra"].ToString()));
+            HttpContext.Current.Response.Redirect("EscogerAsiento.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
     protected void btnCancelar_Click(object sender, EventArgs e)
     {
-        compra.deleteCompraActual();
-        HttpContext.Current.Response.Redirect("Index.aspx");
+        try
+        {
+            compra.deleteCompraActual();
+            HttpContext.Current.Response.Redirect("Index.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 }

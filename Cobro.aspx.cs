@@ -41,15 +41,31 @@ public partial class Cobro : System.Web.UI.Page
 
     protected void btnAceptar_Click(object sender, EventArgs e)
     {
-        compra.actualizarProcesado();
-        HttpContext.Current.Response.Redirect("Login.aspx");
+        try
+        {
+            compra.actualizarProcesado();
+            HttpContext.Current.Response.Redirect("Login.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
 
     }
 
     protected void btnCancelar_Click(object sender, EventArgs e)
     {
-        asiento.setAsientosNull();
-        compra.deleteCompraActual();
-        HttpContext.Current.Response.Redirect("Login.aspx");
+        try
+        {
+            asiento.setAsientosNull();
+            compra.deleteCompraActual();
+            HttpContext.Current.Response.Redirect("Login.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 }

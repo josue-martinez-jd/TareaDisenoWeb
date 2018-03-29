@@ -15,7 +15,7 @@
                             <thead>
                                 <tr>
                                     <th class="center">  
-                                        <asp:Label ID="lblNombreGraderia" runat="server">OESTE</asp:Label>
+                                        <asp:Label ID="lblNombreGraderia" runat="server"></asp:Label>
                                     </th>
                                     <th class="center"> A </th>
                                     <th class="center"> B </th>

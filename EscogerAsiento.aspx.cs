@@ -13,7 +13,7 @@ public partial class EscogerAsiento : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        lblNombreGraderia.Text = Session["id_graderia"].ToString();
+        //lblNombreGraderia.Text = Session["id_graderia"].ToString();
 
         asiento.setAsientos();
         updateColorAsiento(btnA1, Asiento.A1);
@@ -35,22 +35,32 @@ public partial class EscogerAsiento : System.Web.UI.Page
 
     private void onclickColor (Button btn, int id_asiento)
     {
-        if (asiento.returnEstadoAsiento(id_asiento) == 0) { 
-        if (btn.CssClass != "btn btn-danger")
+        try
         {
-                Asiento.cantAsientos = Asiento.cantAsientos + 1;
-                asiento.updateToBusyAsiento(id_asiento);
-            btn.CssClass = "btn btn-danger";
-                lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
-        }
-        else
-        {
-                Asiento.cantAsientos = Asiento.cantAsientos - 1;
-                asiento.updateToFreeAsiento(id_asiento);
-            btn.CssClass = "btn btn-success";
-                lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
+            if (asiento.returnEstadoAsiento(id_asiento) == 0)
+            {
+                if (btn.CssClass != "btn btn-danger")
+                {
+                    Asiento.cantAsientos = Asiento.cantAsientos + 1;
+                    asiento.updateToBusyAsiento(id_asiento);
+                    btn.CssClass = "btn btn-danger";
+                    lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
+                }
+                else
+                {
+                    Asiento.cantAsientos = Asiento.cantAsientos - 1;
+                    asiento.updateToFreeAsiento(id_asiento);
+                    btn.CssClass = "btn btn-success";
+                    lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
+                }
             }
         }
+        catch (Exception h)
+        {
+
+        }
+
+
     }
 
     protected void btnA1_Click(object sender, EventArgs e)
@@ -106,21 +116,28 @@ public partial class EscogerAsiento : System.Web.UI.Page
 
     protected void btnSiguiente_Click(object sender, EventArgs e)
     {
-        setToBusy(btnA1, Asiento.A1);
-        setToBusy(btnA2, Asiento.A2);
-        setToBusy(btnA3, Asiento.B1);
-        setToBusy(btnA4, Asiento.B2);
-        setToBusy(btnA5, Asiento.C1);
-        setToBusy(btnB1, Asiento.C2);
-        setToBusy(btnB2, Asiento.D1);
-        setToBusy(btnB3, Asiento.D2);
-        setToBusy(btnB4, Asiento.E1);
-        setToBusy(btnB5, Asiento.E2);
+        try
+        {
+            setToBusy(btnA1, Asiento.A1);
+            setToBusy(btnA2, Asiento.A2);
+            setToBusy(btnA3, Asiento.B1);
+            setToBusy(btnA4, Asiento.B2);
+            setToBusy(btnA5, Asiento.C1);
+            setToBusy(btnB1, Asiento.C2);
+            setToBusy(btnB2, Asiento.D1);
+            setToBusy(btnB3, Asiento.D2);
+            setToBusy(btnB4, Asiento.E1);
+            setToBusy(btnB5, Asiento.E2);
 
-        lblNombreGraderia.Text = Session["id_graderia"].ToString();
+            compra.actualizarCantAsientos(Asiento.cantAsientos, Int32.Parse(Session["id_compra"].ToString()));
+            HttpContext.Current.Response.Redirect("Cobro.aspx");
+        }
+        catch (Exception h)
+        {
 
-        compra.actualizarCantAsientos(Asiento.cantAsientos, Int32.Parse(Session["id_compra"].ToString()));
-        HttpContext.Current.Response.Redirect("Cobro.aspx");
+        }
+
+
     }
 
 
@@ -150,9 +167,17 @@ public partial class EscogerAsiento : System.Web.UI.Page
 
     protected void btnCancelarAsiento_Click(object sender, EventArgs e)
     {
-        asiento.setAsientosNull();
-        compra.deleteCompraActual();
-        HttpContext.Current.Response.Redirect("Login.aspx");
+        try
+        {
+            asiento.setAsientosNull();
+            compra.deleteCompraActual();
+            HttpContext.Current.Response.Redirect("Login.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
 }

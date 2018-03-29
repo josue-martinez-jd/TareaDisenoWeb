@@ -41,30 +41,70 @@ public partial class EscogerEvento : System.Web.UI.Page
 
     protected void btnSiguiente_Click(object sender, EventArgs e)
     {
-        Session["id_translado"]= Int32.Parse(btnTranslado.SelectedIndex.ToString())+1;
-        compra.CrearCompra(Int32.Parse(Session["id_evento"].ToString()), Int32.Parse(Session["id_translado"].ToString()), Session["cedula"].ToString());
-        compra.setCompraActual();
+        try
+        {
+            Session["id_translado"] = Int32.Parse(btnTranslado.SelectedIndex.ToString()) + 1;
+            compra.CrearCompra(Int32.Parse(Session["id_evento"].ToString()), Int32.Parse(Session["id_translado"].ToString()), Session["cedula"].ToString());
+            compra.setCompraActual();
 
-        HttpContext.Current.Response.Redirect("Index.aspx");
+            HttpContext.Current.Response.Redirect("Index.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+
     }
 
     protected void btnEscogerEvento1_Click(object sender, EventArgs e)
     {
-        Session["id_evento"] = 1;
+        try
+        {
+            Session["id_evento"] = 1;
+        }
+        catch (Exception h)
+        {
+
+        }
+        
     }
 
     protected void btnEscogerEvento2_Click(object sender, EventArgs e)
     {
-        Session["id_evento"] = 2;
+        try
+        {
+            Session["id_evento"] = 2;
+        }
+        catch (Exception h)
+        {
+
+        }
+        
     }
 
     protected void btnEscogerEvento3_Click(object sender, EventArgs e)
     {
-        Session["id_evento"] = 3;
+        try
+        {
+            Session["id_evento"] = 3;
+        }
+        catch (Exception h)
+        {
+
+        }
+        
     }
 
     protected void btnCancelar_Click(object sender, EventArgs e)
     {
-        HttpContext.Current.Response.Redirect("Login.aspx");
+        try
+        {
+            HttpContext.Current.Response.Redirect("Login.aspx");
+        }
+        catch (Exception h)
+        {
+
+        }
+        
     }
 }
