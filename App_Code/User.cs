@@ -72,4 +72,25 @@ public class User
         conexion.Close(); //terminar conexion
     }
 
+    public void limpiarDatosDB()
+    {
+        conexion.Open(); //Iniciar conexion
+
+        sql = "update a set a.id_cobro = null, a.estado = 0 from t_asiento a JOIN t_cobro c"
+        + " ON(a.id_cobro = c.id_cobro) where c.procesado != 1";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+
+        conexion.Open(); //Iniciar conexion
+
+        sql = "DELETE FROM t_cobro WHERE procesado != 1";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+        conexion.Close(); //terminar conexion
+    }
 }

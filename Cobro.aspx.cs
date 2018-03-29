@@ -14,11 +14,18 @@ public partial class Cobro : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        TableRow row = new TableRow();
-        TableCell cell1 = new TableCell();
-        cell1.Text = "blah blah blah";
-        row.Cells.Add(cell1);
-        tblBoletos.Rows.Add(row);
+        if (!Page.IsPostBack)
+        {
+            Asiento.rondaActual = 0;
+        }
+
+        for (int i=0; Asiento.cantAsientos > i; i++)
+        {
+            tblBoletos.Rows.Add(asiento.returnFilaAsientos(Asiento.rondaActual,Int32.Parse(Session["id_compra"].ToString())));
+            Asiento.rondaActual = Asiento.rondaActual + 5;
+        }
+        
+        
 
         setlabels.setlabelsCobro();
 
@@ -34,7 +41,9 @@ public partial class Cobro : System.Web.UI.Page
 
     protected void btnAceptar_Click(object sender, EventArgs e)
     {
+        compra.actualizarProcesado();
         HttpContext.Current.Response.Redirect("Login.aspx");
+
     }
 
     protected void btnCancelar_Click(object sender, EventArgs e)

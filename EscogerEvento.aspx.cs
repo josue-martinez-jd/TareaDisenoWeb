@@ -15,6 +15,7 @@ public partial class EscogerEvento : System.Web.UI.Page
         setLabel.setLabelsEvento();
         lblDescripcion1.Text= SetLabel.Descripcion1;
         lblArtista1.Text = SetLabel.Artista1;
+        lblHorario1.Text = SetLabel.Horario1;
         lblCostoEste1.Text = SetLabel.CostoEste1;
         lblCostoNorte1.Text = SetLabel.CostoNorte1;
         lblCostoOeste1.Text = SetLabel.CostoOeste1;
@@ -22,6 +23,7 @@ public partial class EscogerEvento : System.Web.UI.Page
 
         lblDescripcion2.Text = SetLabel.Descripcion2;
         lblArtista2.Text = SetLabel.Artista2;
+        lblHorario2.Text = SetLabel.Horario2;
         lblCostoEste2.Text = SetLabel.CostoEste2;
         lblCostoNorte2.Text = SetLabel.CostoNorte2;
         lblCostoOeste2.Text = SetLabel.CostoOeste2;
@@ -29,6 +31,7 @@ public partial class EscogerEvento : System.Web.UI.Page
 
         lblDescripcion3.Text = SetLabel.Descripcion3;
         lblArtista3.Text = SetLabel.Artista3;
+        lblHorario3.Text = SetLabel.Horario3;
         lblCostoEste3.Text = SetLabel.CostoEste3;
         lblCostoNorte3.Text = SetLabel.CostoNorte3;
         lblCostoOeste3.Text = SetLabel.CostoOeste3;

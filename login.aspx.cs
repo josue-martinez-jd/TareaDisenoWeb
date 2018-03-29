@@ -20,6 +20,8 @@ public partial class login : System.Web.UI.Page
             Session["id_graderia"] = null;
             Session["id_translado"] = null;
             Session["id_evento"] = null;
+
+            user.limpiarDatosDB();
         }
 
     }

@@ -9,10 +9,12 @@ public partial class EscogerAsiento : System.Web.UI.Page
 {
     Asiento asiento = new Asiento();
     Compra compra = new Compra();
-    public static int cantAsientos ;
+    
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblNombreGraderia.Text = Session["id_graderia"].ToString();
+
         asiento.setAsientos();
         updateColorAsiento(btnA1, Asiento.A1);
         updateColorAsiento(btnA2, Asiento.A2);
@@ -26,9 +28,9 @@ public partial class EscogerAsiento : System.Web.UI.Page
         updateColorAsiento(btnB5, Asiento.E2);
         if (!Page.IsPostBack)
         {
-            cantAsientos = 0;
+            Asiento.cantAsientos = 0;
         }
-        lblCantidadAsientos.Text = cantAsientos.ToString();
+        lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
     }
 
     private void onclickColor (Button btn, int id_asiento)
@@ -36,17 +38,17 @@ public partial class EscogerAsiento : System.Web.UI.Page
         if (asiento.returnEstadoAsiento(id_asiento) == 0) { 
         if (btn.CssClass != "btn btn-danger")
         {
-                cantAsientos = cantAsientos + 1;
+                Asiento.cantAsientos = Asiento.cantAsientos + 1;
                 asiento.updateToBusyAsiento(id_asiento);
             btn.CssClass = "btn btn-danger";
-                lblCantidadAsientos.Text = cantAsientos.ToString();
+                lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
         }
         else
         {
-                cantAsientos = cantAsientos - 1;
+                Asiento.cantAsientos = Asiento.cantAsientos - 1;
                 asiento.updateToFreeAsiento(id_asiento);
             btn.CssClass = "btn btn-success";
-                lblCantidadAsientos.Text = cantAsientos.ToString();
+                lblCantidadAsientos.Text = Asiento.cantAsientos.ToString();
             }
         }
     }
@@ -115,7 +117,9 @@ public partial class EscogerAsiento : System.Web.UI.Page
         setToBusy(btnB4, Asiento.E1);
         setToBusy(btnB5, Asiento.E2);
 
-        compra.actualizarCantAsientos(cantAsientos, Int32.Parse(Session["id_compra"].ToString()));
+        lblNombreGraderia.Text = Session["id_graderia"].ToString();
+
+        compra.actualizarCantAsientos(Asiento.cantAsientos, Int32.Parse(Session["id_compra"].ToString()));
         HttpContext.Current.Response.Redirect("Cobro.aspx");
     }
 

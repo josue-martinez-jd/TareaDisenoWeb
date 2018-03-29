@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Web;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Summary description for Asiento
@@ -18,6 +19,9 @@ public class Asiento
     String sql;
     SqlCommand com;
     SqlDataReader rs;
+
+    public static int cantAsientos;
+    public static int rondaActual;
 
     public Asiento()
     {
@@ -170,4 +174,48 @@ public class Asiento
         conexion.Close(); //terminar conexion
     }
 
+    public TableRow returnFilaAsientos(int ronda, int id_compra)
+    {
+        conexion.Open(); //Iniciar conexion
+        TableRow row = new TableRow();
+
+        TableCell cellAsiento = new TableCell();
+        TableCell cellDescripcion = new TableCell();
+        TableCell cellHorario = new TableCell();
+        TableCell cellGraderia = new TableCell();
+        TableCell cellPrecioU = new TableCell();
+
+        sql = "select a.id_asiento as asiento,e.descripcion, e.horario, g.nombre as graderia,'₡' + CONVERT(varchar, CAST(g.precio AS money), 1) as precioUnidad"
+        +" from t_cobro c"
+        +" JOIN t_asiento a"
+        +" ON(a.id_cobro = c.id_cobro)"
+        +" JOIN t_evento e"
+        +" ON(c.id_evento = e.id_evento)"
+        +" JOIN t_graderia g"
+        +" ON(c.id_graderia = g.id_graderia)"
+        +" where a.id_cobro= " + id_compra + "";
+
+        com = conexion.CreateCommand();
+        com.CommandText = sql;
+        rs = com.ExecuteReader(); //solamente para SELECT
+
+        if (rs.Read()) {
+            cellAsiento.Text = rs[0].ToString();
+            cellDescripcion.Text = rs[1].ToString();
+            cellHorario.Text = rs[2].ToString();
+            cellGraderia.Text = rs[3].ToString();
+            cellPrecioU.Text = rs[4].ToString();
+        }
+
+        row.Cells.Add(cellAsiento);
+        row.Cells.Add(cellDescripcion);
+        row.Cells.Add(cellHorario);
+        row.Cells.Add(cellGraderia);
+        row.Cells.Add(cellPrecioU);
+
+        conexion.Close(); //terminar conexion
+
+        return row;
+        
+    }
 }
